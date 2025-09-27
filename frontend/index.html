@@ -12,83 +12,654 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- charts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- styles -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- main container start -->
+    <!-- main container starts -->
     <div class="main-container">
-      <!-- asidebar start -->
-      <div class="aside">
+      <!-- aside start -->
+      <aside id="left-nav">
         <div class="aside-logo">
           <i class="fa-solid fa-shop"></i>
-          <div class="admin-panel">Admin panel</div>
+          <h2 class="admin-panel">Admin</h2>
         </div>
 
-        <div class="aside-list-items">
-          <div class="list-items">
-             <!-- aside list items -->
-            <ul>
-              <li class="">
-                <a href="#" class="active"><i class="fa-brands fa-trello"></i> Dashboard</a>
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa-brands fa-product-hunt"></i> Products</a
-                >
-              </li>
-              <li>
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i> Orders</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa-regular fa-user"></i> Customers</a>
-              </li>
-              <li>
-                <a href="#"
-                  ><i class="fa-solid fa-users-gear"></i> User Management</a
-                >
-              </li>
-              <li>
-                <a href="#"><i class="fa-solid fa-chart-line"></i> Analytics</a>
-              </li>
-              <li>
-                <a href="#"><i class="fa-solid fa-cog"></i> Settings</a>
-              </li>
-            </ul>
-          <!-- asie list item end -->
-          </div>
-          <!-- toggle -->
-           <div class="theme-toggle">
-            toggle-theme
-           </div>
-        </div>
-      </div>
-      <!-- asidebar end -->
+        <nav class="left-side-nav">
+          <ul>
+            <li id="dashboard">
+              <a href="#" id="active"
+                ><i class="fa-brands fa-trello"></i> Dashboard</a
+              >
+            </li>
+            <li id="product">
+              <a href="#"><i class="fa-brands fa-product-hunt"></i> Products</a>
+            </li>
+            <li id="order">
+              <a href="#"><i class="fa-solid fa-cart-shopping"></i> Orders</a>
+            </li>
+            <li id="customer">
+              <a href="#"><i class="fa-regular fa-user"></i> Customers</a>
+            </li>
+            <li id="setting">
+              <a href="#"><i class="fa-solid fa-cog"></i> Settings</a>
+            </li>
+          </ul>
 
-      <div class="right-container">
-        <!-- navbar starts -->
-       <nav>
-        <i id="hide" class="fa-solid fa-bars hide"></i>
-        <div class="nav-items">
-            <p>Welcome , Admin User</p>
+          <div class="theme-toogle">toogle</div>
+        </nav>
+      </aside>
+      <!-- aside end -->
+      <!-- right-side-container start -->
+      <div class="right-side-container">
+        <nav class="right-side-nav">
+          <div class="hide-menu"><i id="hide" class="fa-solid fa-bars"></i></div>
+          <div class="nav-content">
+            <p class="fw">Welcome , Admin User</p>
             <a href="#" class="view-store">View Store</a>
             <div class="log-out">
-              <a href=""><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+              <a href="#"
+                ><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a
+              >
             </div>
-        </div>
-       </nav>
-      <!-- navbar End -->
-      <section>
-        <div class="container">
-          bashboard
-        </div>
-      </section>
-      </div>
+          </div>
+        </nav>
 
+        <div class="container">
+          <!-- Dashboard menu start -->
+          <section id="dashboard-section" class="section-hid">
+            <div class="dashboard-heading">
+              <div class="dashboard-left-heading">
+                <h1>Admin Dashboard</h1>
+                <p class="fw">
+                  Welcome back, Admin User! Here's what's happening with your
+                  store.
+                </p>
+              </div>
+              <div class="dashboard-right-heading">
+                <button class="btn-primary btn-hover">Add Product</button>
+                <button class="btn-classic btn-hover">View All Orders</button>
+              </div>
+            </div>
+
+            <div class="p-card">
+              <!-- Revenue Card -->
+              <div class="p-items shadow">
+                <div class="card-revenue center">
+                  <p class="fw">Total Revenue</p>
+                  <h1>$399.99</h1>
+                  <p><span>+20.1%</span> from last month</p>
+                </div>
+                <i class="fa-solid fa-dollar-sign"></i>
+              </div>
+
+              <!-- Order Card -->
+              <div class="p-items shadow">
+                <div class="card-order center">
+                  <p class="fw">Total Orders</p>
+                  <h1>5</h1>
+                  <p><span>+12.4%</span> from last month</p>
+                </div>
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+
+              <!-- Product Card -->
+              <div class="p-items shadow">
+                <div class="card-product center">
+                  <p class="fw">Total Products</p>
+                  <h1>0</h1>
+                  <p><span>+5.2%</span> from last month</p>
+                </div>
+                <i class="fa-solid fa-box-open"></i>
+              </div>
+
+              <!-- Active Product Card -->
+              <div class="p-items shadow">
+                <div class="active-product center">
+                  <p class="fw">Active Products</p>
+                  <h1>12</h1>
+                  <p><span>+3.8%</span> from last month</p>
+                </div>
+                <i class="fa-solid fa-check-circle"></i>
+              </div>
+            </div>
+
+            <!-- overview start -->
+            <div class="overview">
+              <h2>Quick Action</h2>
+              <div class="p-card">
+                <!-- Manage Products -->
+                <div class="manage-products active" tabindex="0">
+                  <i class="fa-solid fa-box-open"></i>
+                  <p>Manage Products</p>
+                </div>
+
+                <!-- View Orders -->
+                <div class="view-order" tabindex="0">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <p>View Orders</p>
+                </div>
+
+                <!-- Customer List -->
+                <div class="customer-list" tabindex="0">
+                  <i class="fa-solid fa-users"></i>
+                  <p>Customer List</p>
+                </div>
+
+                <!-- User Manage -->
+                <div class="user-manage" tabindex="0">
+                  <i class="fa-solid fa-user-gear"></i>
+                  <p>User Manage</p>
+                </div>
+
+                <!-- Analytics -->
+                <div class="analytics" tabindex="0">
+                  <i class="fa-solid fa-chart-line"></i>
+                  <p>Analytics</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- overview end -->
+            <!-- charts starts -->
+
+            <div class="charts">
+              <div id="chartContainer">
+                <p>Sales Overview</p>
+                <p class="fw">Monthly sales performance</p>
+                <canvas id="myLineChart"></canvas>
+              </div>
+
+              <div id="volumeChartContainer">
+                <p>Monthly Order</p>
+                <p class="fw">order volume trends</p>
+                <canvas id="volumeChart"></canvas>
+              </div>
+            </div>
+
+            <!-- charts end -->
+
+            <!-- order chacking start -->
+            <div class="chacking-order">
+              <div class="recent-order">
+                <div class="headings">
+                  <h2>Recent Order</h2>
+                  <button class="view-all btn-classic">View ALL</button>
+                </div>
+                <div class="order-list">
+                  <p class="fw">Order</p>
+                  <p class="fw">Customer</p>
+                  <p class="fw">Status</p>
+                  <p class="fw">Amount</p>
+                  <p class="fw">Actions</p>
+                </div>
+                <div class="chacking-order-items">
+                  <div class="order-items-info">
+                    <p>ORD-01</p>
+                    <div class="customer-info">
+                      <p class="fw">John Doe</p>
+                      <p class="fw">johndo@gmail.com</p>
+                    </div>
+                    <select class="status-dropdown" id="">
+                      <option value="shipped">shipped</option>
+                      <option value="pending">pending</option>
+                      <option value="complete">complete</option>
+                      <option value="proccesing">proccesing</option>
+                      <option value="cancled">cancled</option>
+                    </select>
+                    <p class="amount">$199.99</p>
+                    <i class="fa-solid fa-eye"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="recent-product">
+                <div class="headings">
+                  <h2>Product Management</h2>
+                  <button class="view-all btn-primary">Add Product</button>
+                </div>
+                <a href="#"
+                  ><button class="link-product">View All Products</button></a
+                >
+              </div>
+            </div>
+            <!-- order chacking end -->
+          </section>
+          <!-- Dashboard menu end -->
+
+          <!-- products section starts -->
+          <section id="products-section" class="section-hide">
+            <div class="headings">
+              <div class="product-text">
+                <h2>Products</h2>
+                <p class="fw">manage your product inventory and catalog.</p>
+              </div>
+              <a href="#"><button class="btn-primary">Add Product</button></a>
+            </div>
+
+            <div class="product-card-container">
+              <div class="p-card">
+                <div class="p-items">
+                  <div>
+                    <p class="fw">Total Products</p>
+                    <p>0</p>
+                  </div>
+                  <i class="fa-brands fa-wpforms"></i>
+                </div>
+
+                <div class="p-items">
+                  <div>
+                    <p class="fw">Active Products</p>
+                    <p>0</p>
+                  </div>
+                  <i class="fa-brands fa-wpforms"></i>
+                </div>
+
+                <div class="p-items">
+                  <div>
+                    <p class="fw">Out of Stock</p>
+                    <p>0</p>
+                  </div>
+                  <i class="fa-brands fa-wpforms"></i>
+                </div>
+
+                <div class="p-items">
+                  <div>
+                    <p class="fw">Low Stock</p>
+                    <p>0</p>
+                  </div>
+                  <i class="fa-brands fa-wpforms"></i>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- products section end -->
+
+          <!-- order section starts -->
+          <section id="order-section" class="section-hide">
+            <div class="headings">
+              <div>
+                <h2>Orders</h2>
+                <p class="fw">Manage and track all customer orders.</p>
+              </div>
+            </div>
+
+            <div class="order-card-container">
+              <div class="p-card">
+                <div class="p-items">
+                  <div>
+                    <p class="fw">Total Order</p>
+                    <h3>5</h3>
+                  </div>
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+
+                <div class="p-items">
+                  <div>
+                    <p class="fw">Pending</p>
+                    <h3>5</h3>
+                  </div>
+                  <i class="fas fa-clock"></i>
+                </div>
+
+                <div class="p-items">
+                  <div>
+                    <p class="fw">Proccesing</p>
+                    <h3>5</h3>
+                  </div>
+                  <i class="fas fa-clock"></i>
+                </div>
+
+                <div class="p-items">
+                  <div>
+                    <p class="fw">Shipping</p>
+                    <h3>5</h3>
+                  </div>
+                  <i class="fas fa-truck"></i>
+                </div>
+
+                <div class="p-items">
+                  <div>
+                    <p class="fw">Complete</p>
+                    <h3>5</h3>
+                  </div>
+                  <i class="fas fa-check-circle"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-management">
+              <div class="headings">
+                <h2>Order Management</h2>
+                <div class="chack-order-status fw">
+                  <select name="" id="order-list">
+                    <option value="All Status">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="complete">complete</option>
+                    <option value="cancled">cancled</option>
+                    <option value="proccesing">proccesing</option>
+                  </select>
+                  <div class="search">
+                    <input type="text" placeholder="search orders..." />
+                    <i class="fas fa-magnifying-glass"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="order-management-list">
+                <p class="fw">Order ID</p>
+                <p class="fw">Customer</p>
+                <p class="fw">Date</p>
+                <p class="fw">Items</p>
+                <p class="fw">Amount</p>
+                <p class="fw">Payment</p>
+                <p class="fw">Status</p>
+                <p class="fw">Action</p>
+              </div>
+              <div class="user-oder-list">
+                <p>ORD-01</p>
+                <div>
+                  <p>John doe</p>
+                  <p class="fw">john@gmail.com</p>
+                </div>
+                <p>2022-01-14</p>
+                <p>2 items</p>
+                <p>$299.99</p>
+                <button class="btn-primary">paind</button>
+                <select name="" id="order-list">
+                  <option value="All Status">All Status</option>
+                  <option value="pending">Pending</option>
+                  <option value="complete">complete</option>
+                  <option value="cancled">cancled</option>
+                  <option value="proccesing">proccesing</option>
+                </select>
+                <p>Action</p>
+              </div>
+            </div>
+          </section>
+          <!-- order section end -->
+
+          <!-- Cusotmer section starts -->
+          <section id="customers-section" class="section-hide">
+            <div class="headings">
+              <div>
+                <h2>Customers</h2>
+                <p class="fw">Manage your base and relationships</p>
+              </div>
+            </div>
+            <div class="p-card">
+              <div class="p-items">
+                <div>
+                  <p class="fw">Total Customers</p>
+                  <p>6</p>
+                </div>
+              </div>
+
+              <div class="p-items">
+                <div>
+                  <p class="fw">Active Customers</p>
+                  <p>0</p>
+                </div>
+              </div>
+
+              <div class="p-items">
+                <div>
+                  <p class="fw">VIP Customers</p>
+                  <p>2</p>
+                </div>
+              </div>
+
+              <div class="p-items">
+                <div>
+                  <p class="fw">Blocked</p>
+                  <p>0</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="cusotmer-management">
+              <div class="order-management">
+                <div class="headings">
+                  <h2>Order Management</h2>
+                  <div class="chack-order-status fw">
+                    <div class="search">
+                      <input type="text" placeholder="search orders..." />
+                      <i class="fas fa-magnifying-glass"></i>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="order-management-list">
+                  <p class="fw">Customer</p>
+                  <p class="fw">Date</p>
+                  <p class="fw">Items</p>
+                  <p class="fw">Amount</p>
+                  <p class="fw">Tier</p>
+                  <p class="fw">Status</p>
+                  <p class="fw">Action</p>
+                </div>
+                <div class="user-oder-list">
+                  <div>
+                    <p>John doe</p>
+                    <p class="fw">john@gmail.com</p>
+                  </div>
+                  <p>2022-01-14</p>
+                  <p>2 items</p>
+                  <p>$299.99</p>
+                  <button class="btn-gold">gold</button>
+                  <select name="" id="order-list">
+                    <option value="All Status">All Status</option>
+                    <option value="pending">Pending</option>
+                    <option value="complete">complete</option>
+                    <option value="cancled">cancled</option>
+                    <option value="proccesing">proccesing</option>
+                  </select>
+                  <p>Action</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- Cusotmer section end -->
+          <!-- Settings section start -->
+          <section id="setting-section" class="section-hide">
+            <div class="headings">
+              <div>
+                <h2>Settings</h2>
+                <p class="fw">Manage your store settings and preferences</p>
+              </div>
+            </div>
+
+            <div class="setting-card-container">
+              <div class="setting-card">
+                <div class="settings-headings">
+                  <i class="fa-solid fa-user"></i>
+                  <h1>Profile Settings</h1>
+                </div>
+                <form action="" class="set-role">
+                  <!-- Full Name -->
+                  <div>
+                    <label for="fullname">Full Name</label><br />
+                    <input
+                      type="text"
+                      id="fullname"
+                      name="fullname"
+                      placeholder="Enter full name"
+                    /><br />
+                  </div>
+
+                  <!-- Email -->
+                  <div>
+                    <label for="email">Email</label><br />
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter email"
+                    /><br />
+                  </div>
+
+                  <!-- Role -->
+                  <div>
+                    <label for="role">Role</label><br />
+                    <input
+                      type="text"
+                      id="role"
+                      name="role"
+                      placeholder="admin"
+                    />
+                    <br />
+                  </div>
+
+                  <!-- Submit Button -->
+                  <button type="submit" class="btn-primary">save</button>
+                </form>
+              </div>
+              <!-- card 2 -->
+              <div class="setting-card">
+                <div class="settings-headings">
+                  <i class="fa-solid fa-store"></i>
+                  <h1>Store Settings</h1>
+                </div>
+                <form class="set-role">
+                  <div>
+                    <label for="storeName">Store Name</label>
+                    <input type="text" id="storeName" value="ShopHub" />
+                  </div>
+
+                  <div class="des">
+                    <label for="description">Description</label>
+                    <textarea
+                      id="description"
+                      placeholder="Write your store description..."
+                    ></textarea>
+                  </div>
+
+                  <div>
+                    <label for="currency">Currency</label>
+                    <input type="text" id="currency" value="USD" />
+                  </div>
+
+                  <button type="submit" class="btn-primary">Save Settings</button>
+                </form>
+              </div>
+              <!-- card 3 -->
+              <div class="setting-card">
+                <div class="settings-headings">
+                  <i class="fa-solid fa-bell"></i>
+                  <h1>Notification</h1>
+                </div>
+                <div class="notify-orders">
+                  <div class="notify-order">
+                    <p>Order Notification</p>
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+
+                    <div class="notify-stock-alert">
+                    <p>Low Stock Alert</p>
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+
+                  <div class="notify-email">
+                    <p>Email Notification</p>
+                    <label class="switch">
+                      <input type="checkbox" />
+                      <span class="slider"></span>
+                    </label>
+                  </div>
+                </div>
+                <button class="btn-primary notify-save">Save Notification</button>
+              </div>
+            </div>
+          </section>
+          <!-- Settings section end -->
+        </div>
+      </div>
+      <!-- right-side-container end -->
     </div>
     <!-- main container end -->
 
     <!-- javascript -->
     <script src="JS/app.js"></script>
+    <!-- charts js -->
+    <script>
+      const ctx = document.getElementById("myLineChart").getContext("2d");
+      const myLineChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"], // X-axis
+          datasets: [
+            {
+              label: "Sales",
+              data: [10, 20, 15, 25, 30, 22, 35], // Y-axis
+              borderColor: "rgba(75, 192, 192, 1)",
+              backgroundColor: "rgba(75, 192, 192, 0.2)",
+              fill: true,
+              tension: 0.4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: true,
+              position: "top",
+            },
+            tooltip: {
+              enabled: true,
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+
+    <!-- valume -->
+    <script>
+      const ctxVolume = document.getElementById("volumeChart").getContext("2d");
+      const volumeChart = new Chart(ctxVolume, {
+        type: "bar", // Bar chart
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"], // X-axis
+          datasets: [
+            {
+              label: "Volume",
+              data: [500, 700, 600, 800, 1200, 900, 1100], // Y-axis values
+              backgroundColor: "rgba(153, 102, 255, 0.6)",
+              borderColor: "rgba(153, 102, 255, 1)",
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              display: true,
+              position: "top",
+            },
+            tooltip: {
+              enabled: true,
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
   </body>
 </html>
