@@ -48,19 +48,29 @@
             </li>
           </ul>
 
-          <div class="theme-toogle">toogle</div>
+          <div class="theme-toogle">
+            <h3>Theme</h3>
+            <div class="theme-dark-light">
+              <label class="switch">
+                <input type="checkbox" />
+                <span id="theme-dark-light" class="slider"></span>
+              </label>
+            </div>
+          </div>
         </nav>
       </aside>
       <!-- aside end -->
       <!-- right-side-container start -->
       <div class="right-side-container">
         <nav class="right-side-nav">
-          <div class="hide-menu"><i id="hide" class="fa-solid fa-bars"></i></div>
+          <div class="hide-menu">
+            <i id="hide" class="fa-solid fa-bars"></i>
+          </div>
           <div class="nav-content">
             <p class="fw">Welcome , Admin User</p>
             <a href="#" class="view-store">View Store</a>
             <div class="log-out">
-              <a href="#"
+              <a href="/frontend/login.html"
                 ><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a
               >
             </div>
@@ -540,7 +550,9 @@
                     <input type="text" id="currency" value="USD" />
                   </div>
 
-                  <button type="submit" class="btn-primary">Save Settings</button>
+                  <button type="submit" class="btn-primary">
+                    Save Settings
+                  </button>
                 </form>
               </div>
               <!-- card 3 -->
@@ -558,7 +570,7 @@
                     </label>
                   </div>
 
-                    <div class="notify-stock-alert">
+                  <div class="notify-stock-alert">
                     <p>Low Stock Alert</p>
                     <label class="switch">
                       <input type="checkbox" />
@@ -574,7 +586,9 @@
                     </label>
                   </div>
                 </div>
-                <button class="btn-primary notify-save">Save Notification</button>
+                <button class="btn-primary notify-save">
+                  Save Notification
+                </button>
               </div>
             </div>
           </section>
@@ -582,6 +596,14 @@
         </div>
       </div>
       <!-- right-side-container end -->
+      <!-- save alert notify  -->
+      <div class="save-notify-alert hide-notify">
+        <div class="save-notify">
+          <p>password save scessfully</p>
+          <p>save notify</p>
+        </div>
+      </div>
+      <!-- save alert notify  -->
     </div>
     <!-- main container end -->
 

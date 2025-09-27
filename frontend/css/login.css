@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+  /* Root variables */
+  :root {
+    --bg-color: #f5f7fa;
+    --bg-dark: #1e1e2f;
+    --card-bg: #ffffff;
+    --card-dark: #2a2a40;
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --accent: #06b6d4;
+    --accent-hover: #0891b2;
+    --text-dark: #111827;
+    --text-light: #f9fafb;
+    --border-color: #e5e7eb;
+    --border-dark: #374151;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Global styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+  }
+
+  body {
+    background: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    background: var(--card-bg);
+    box-shadow: var(--shadow);
+    border-radius: 10px;
+    padding: 2rem;
+    width: 350px;
+    color: var(--text-dark);
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .card.dark {
+    background: var(--card-dark);
+    color: var(--text-light);
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: transparent;
+    color: inherit;
+  }
+
+  input::placeholder {
+    color: #9ca3af;
+  }
+
+  button {
+    background: var(--primary);
+    color: var(--text-light);
+    border: none;
+    padding: 0.75rem;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s;
+  }
+
+  button:hover {
+    background: var(--primary-hover);
+  }
+
+  .toggle-theme {
+    margin-top: 1rem;
+    text-align: center;
+    cursor: pointer;
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .toggle-theme:hover {
+    color: var(--accent-hover);
+  }
+
+
+  .hide-login-form
+  {
+    display: none;
+  }
+
+form p,
+form p
+  {
+    margin-top: 1rem;
+    color: var(--bg-color);
+    font-weight: 600;
+    max-width: 100px;
+    padding: 10px 0;
+    border-radius: 25px;
+    background-color: #06b6d4;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+
+
